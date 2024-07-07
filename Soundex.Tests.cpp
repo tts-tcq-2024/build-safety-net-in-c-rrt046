@@ -38,8 +38,8 @@ TEST(SoundexTestsuite, NameWithNonAlphaCharacters) {
     ASSERT_STREQ(soundex, "A130");
 }
 
-TEST(SoundexTestsuite, NonAlphaCharactersAndNumbers) {
+TEST(SoundexTestsuite, AlphabetsAndNumbers) {
     char soundex[5];
-    generateSoundex("[1234", soundex);
+    generateSoundex("Ab234", soundex);
     ASSERT_STREQ(soundex, "0000");
 }
