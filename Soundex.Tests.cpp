@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "Soundex.h"
 
-TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_1) {
+TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  //AAA
   char soundex[5];
   generateSoundex("AX", soundex);
@@ -20,3 +20,14 @@ TEST(SoundexTestsuite, IgnoreVowelsAndNonMappedCharacters) {
     ASSERT_STREQ(soundex, "A000");
 }
 
+TEST(SoundexTestsuite, ConsecutiveSameSoundexCodes) {
+    char soundex[5];
+    generateSoundex("Add", soundex);
+    ASSERT_STREQ(soundex, "A300");
+}
+
+TEST(SoundexTestsuite, EarlyLoopTermination) {
+    char soundex[5];
+    generateSoundex("Abcdefghijklmnopqrstuvwxyz", soundex);
+    ASSERT_STREQ(soundex, "A123");
+}
