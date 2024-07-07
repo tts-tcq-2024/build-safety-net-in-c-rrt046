@@ -14,3 +14,10 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_2) {
   generateSoundex("A", soundex);
   ASSERT_STREQ(soundex,"A000");
 }
+
+TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_3) {
+ //AAA
+  char soundex[5];
+  generateSoundex("A@", soundex);
+  //ASSERT_STREQ(soundex,"A000");
+}
