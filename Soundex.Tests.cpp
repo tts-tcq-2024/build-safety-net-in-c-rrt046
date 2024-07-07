@@ -35,5 +35,11 @@ TEST(SoundexTestsuite, EarlyLoopTermination) {
 TEST(SoundexTestsuite, NameWithNonAlphaCharacters) {
     char soundex[5];
     generateSoundex("AB'D", soundex);
-    ASSERT_STREQ(soundex, "A100");
+    ASSERT_STREQ(soundex, "A130");
+}
+
+TEST(SoundexTestsuite, NonAlphaCharactersAndNumbers) {
+    char soundex[5];
+    generateSoundex("[1234", soundex);
+    ASSERT_STREQ(soundex, "0000");
 }
