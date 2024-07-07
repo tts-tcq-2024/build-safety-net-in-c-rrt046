@@ -28,3 +28,19 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_4) {
   generateSoundex("12121", soundex);
   //ASSERT_STREQ(soundex,"A000");
 }
+
+TEST(SoundexTestsuite, AddSoundexCodeFalseBranchCodeIsZero) {
+    char soundex[5] = "A0";
+    int sIndex = 1;
+    addSoundexCode('0', soundex, &sIndex); 
+    ASSERT_EQ(sIndex, 1);                  
+    ASSERT_EQ(soundex[1], '0');            
+}
+
+TEST(SoundexTestsuite, AddSoundexCodeFalseBranchCodeIsSame) {
+    char soundex[5] = "A2";
+    int sIndex = 2;
+    addSoundexCode('2', soundex, &sIndex); 
+    ASSERT_EQ(sIndex, 2);                  
+    ASSERT_EQ(soundex[1], '2');            
+}
