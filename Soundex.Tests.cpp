@@ -18,6 +18,13 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_2) {
 TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_3) {
  //AAA
   char soundex[5];
-  generateSoundex("A@", soundex);
+  generateSoundex("A@1b", soundex);
+  //ASSERT_STREQ(soundex,"A000");
+}
+
+TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_3) {
+ //AAA
+  char soundex[5];
+  generateSoundex("12121", soundex);
   //ASSERT_STREQ(soundex,"A000");
 }
