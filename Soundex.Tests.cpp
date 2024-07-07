@@ -41,5 +41,5 @@ TEST(SoundexTestsuite, NameWithNonAlphaCharacters) {
 TEST(SoundexTestsuite, AlphabetsAndNumbers) {
     char soundex[5];
     generateSoundex("Ab234", soundex);
-    ASSERT_STREQ(soundex, "0000");
+    ASSERT_STREQ(soundex, "A100");
 }
