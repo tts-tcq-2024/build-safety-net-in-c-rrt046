@@ -22,7 +22,7 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_3) {
   //ASSERT_STREQ(soundex,"A000");
 }
 
-TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_3) {
+TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_4) {
  //AAA
   char soundex[5];
   generateSoundex("12121", soundex);
