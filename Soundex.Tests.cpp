@@ -31,3 +31,9 @@ TEST(SoundexTestsuite, EarlyLoopTermination) {
     generateSoundex("Abcdefghijklmnopqrstuvwxyz", soundex);
     ASSERT_STREQ(soundex, "A123");
 }
+
+TEST(SoundexTestsuite, NameWithNonAlphaCharacters) {
+    char soundex[5];
+    generateSoundex("AB'D", soundex);
+    ASSERT_STREQ(soundex, "A100");
+}
