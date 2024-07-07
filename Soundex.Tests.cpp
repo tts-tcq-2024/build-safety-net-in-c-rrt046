@@ -7,3 +7,10 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
   generateSoundex("AX", soundex);
  ASSERT_STREQ(soundex,"A200");
 }
+
+TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
+ //AAA
+  char soundex[5];
+  generateSoundex("A", soundex);
+  ASSERT_STREQ(soundex,"A000");
+}
